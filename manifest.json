@@ -3,11 +3,21 @@
 
   "name": "editorCounter",
   "description": "text counting helper at blog post editor",
-  "version": "1.0",
+  "version": "2.0",
 
   "browser_action": {
     "default_icon": "text-format.png",
     "default_popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://blog.naver.com/*"],
+      "js": ["editor.js"]
+    },
+    {
+      "matches": ["https://*.tistory.com/manage/newpost/*"],
+      "js": ["editor.js"]
+    }
+  ],
   "permissions": ["activeTab"]
 }
