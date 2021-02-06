@@ -3,7 +3,7 @@
 
   "name": "editorCounter",
   "description": "text counting helper at blog post editor",
-  "version": "2.0",
+  "version": "1.3",
 
   "browser_action": {
     "default_icon": "text-format.png",
@@ -11,12 +11,28 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://blog.naver.com/*"],
-      "js": ["editor.js"]
+      "matches": [
+        "https://blog.naver.com/*Redirect=Write",
+        "https://blog.naver.com/*Redirect=Write*",
+        "https://blog.naver.com/*Redirect=Update",
+        "https://blog.naver.com/*Redirect=Update*"
+      ],
+      "js": ["editor/naver-editor.js"]
     },
     {
       "matches": ["https://*.tistory.com/manage/newpost/*"],
-      "js": ["editor.js"]
+      "js": ["editor/tistory-editor.js"]
+    },
+    {
+      "matches": [
+        "https://medium.com/new-story",
+        "https://medium.com/p/*/edit"
+      ],
+      "js": ["editor/medium-editor.js"]
+    },
+    {
+      "matches": ["https://velog.io/write", "https://velog.io/write*"],
+      "js": ["editor/velog-editor.js"]
     }
   ],
   "permissions": ["activeTab"]
