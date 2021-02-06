@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+
+  "name": "editorCounter",
+  "description": "text counting helper at blog post editor",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "text-format.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab"]
+}
