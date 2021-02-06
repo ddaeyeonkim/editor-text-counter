@@ -4,13 +4,22 @@
 // 컨텐트 페이지를 대상으로 아래와 같은 코드를 실행한다
 chrome.tabs.executeScript(
   {
-    code: 'var iframeId = document.getElementsByTagName("iframe")[0].id;var iframe = document.getElementById(iframeId);var iframeDocument = iframe.contentDocument;var editorBody = iframeDocument.getElementById("tinymce");editorBody.innerText;'
-  }, 
+    code:
+      'var iframeId = document.getElementsByTagName("iframe")[0].id;var iframe = document.getElementById(iframeId);var iframeDocument = iframe.contentDocument;var editorBody = iframeDocument.getElementById("tinymce");editorBody.innerText;',
+  },
   // 위의 코드가 실행 된 결과를 추출
-  function(result) {
+  function (result) {
     var editorInnerText = result[0]
-    var length = editorInnerText.length
-    // id 값이 result 인 태그에 결과를 추가한다.
-    document.querySelector('#result').innerText = '현재 글자수 : ' + length
+    var result
+    if (editorInnerText == null || editorInnerText == "undefined") {
+      result =
+        "현재 티스토리의 KEditor(기본모드) 에서만 집계 기능을 지원합니다."
+    } else {
+      var length = editorInnerText.length
+      // id 값이 result 인 태그에 결과를 추가한다.
+      result = "현재 글자수 : " + length
+    }
+
+    document.querySelector("#result").innerText = result
   }
 )
