@@ -6,6 +6,7 @@ function getEditorInfo() {
 
   return {
     name: "미디엄",
+    imgName: 'medium.svg',
     text: editorBody.innerText,
   }
 }

@@ -5,7 +5,25 @@
     <script src="script.js"></script>
     <style>
       body {
-        width: 300px;
+        background-color:#f9f9f9;
+        margin: 0;
+        width: 230px;
+      }
+      .nav {
+        background-color:white;
+        text-align: center;
+        line-height: 45px;
+        position:relative;
+      }
+      .title {
+        display: inline;
+        vertical-align: middle;
+        font-size:1.2rem;
+        margin-left: 3px;
+      }
+      #logo {
+        height: 26px;
+        vertical-align: middle;
       }
       #type {
         font-size: 1.1rem;
@@ -19,9 +37,21 @@
     </style>
   </head>
   <body>
-    <h2>블로그 에디터 글자수 세기</h2>
-    <div id="type"></div>
-    <div id="result"></div>
-    <div id="error"></div>
+    <div class="nav">
+      <img id="logo">
+      <p class="title">
+        <strong id="type"></strong>
+        <span style=font-size:15px;>글자수 세기</span>
+      </p>
+      <hr style="margin:0; border: solid 0.5px #b2b2b2">
+    </div>
+    <div style="padding: 10px">
+      <div id="type"></div>
+      <div style="text-align: center">
+        <p style="margin:0; color: #888;">본문글자수</p>
+        <div id="result"></div>
+      </div>
+      <div id="error"></div>
+    </div>
   </body>
 </html>

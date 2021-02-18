@@ -11,6 +11,7 @@ function getEditorInfo() {
 
   return {
     name: "네이버",
+    imgName: 'naver.svg',
     text: editorBody.innerText,
   }
 }

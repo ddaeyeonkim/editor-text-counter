@@ -5,6 +5,7 @@ function getEditorInfo() {
 
   return {
     name: "벨로그",
+    imgName: 'velog.svg',
     text: editorBody.innerText,
   }
 }
