@@ -16,7 +16,8 @@ chrome.tabs.executeScript({ code: "getEditorInfo()" }, function (infos) {
   } else {
     document.querySelector("#type").innerText = info.name
 
-    var count = "글자수 세기 : " + info.text.length
+    var count = info.text.length + "자"
     document.querySelector("#result").innerText = count
+    document.querySelector("#logo").src = "svg/"+info.imgName
   }
 })

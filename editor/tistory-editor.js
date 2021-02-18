@@ -7,6 +7,7 @@ function getEditorInfo() {
 
   return {
     name: "티스토리",
+    imgName: 'tistory.svg',
     text: editorBody.innerText,
   }
 }
